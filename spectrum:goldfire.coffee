@@ -13,11 +13,6 @@ if process.env.ROOT_URL is "http://localhost:3000/"
       console.log "add some packages for goldfire"
       console.log "#{packageToAdd.join '\n'}\npackges will be installed"
       fs.writeFileSync packageFilePath, (internalPackages.concat packageToAdd).join '\n'
-
-#    console.log fs.readFileSync "#{process.env.PWD}/.meteor/"
-  #    (['aldeed:collection2', 'iron:router', 'aldeed:autoform', 'coffeescript'])->
-  #    do dependencies
-
   @generator =
     setHelpers    : (schema)->
       Template['generator'].helpers
