@@ -1,0 +1,28 @@
+@{{capital collectionName}} = new Mongo.Collection("{{lowercase collectionName}}")
+
+{{capital collectionName}}.attachSchema new SimpleSchema
+{{#each schema}}
+  {{this}}
+{{/each}}
+
+{{capital collectionName}}.allow
+  insert: (userId, doc) ->
+    (if userId then true else false)
+
+  update: (userId, doc) ->
+    doc and doc.createdUserId is userId
+
+  remove: (userId, doc) ->
+    doc and doc.createdUserId is userId
+
+
+#activate groundDB for {{lowercase collectionName}} collection to work offline
+# uncomment to use
+#GroundDB {{capital collectionName}}
+#
+
+# register helper for default relations 
+
+# uncomment to use
+#UI.registerHelper '{{lowercase collectionName}}', ->
+#{{capital collectionName}}.findOne @.{{lowercase collectionName}}Id
