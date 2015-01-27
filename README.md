@@ -7,7 +7,15 @@
 * coffeescript
 
 ## install
+* simple way
 ```
+meteor add spectrum:goldfire
+```
+* for developer
+```
+mkdir -p packages
+cd packages
+git clone https://github.com/acidsound/meteor-goldfire.git
 meteor add spectrum:goldfire
 ```
 
