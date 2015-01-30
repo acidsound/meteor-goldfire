@@ -16,7 +16,7 @@ Package.onUse(function(api) {
   api.use('aldeed:collection2');
   api.use('aldeed:autoform');
   api.addFiles([
-    'spectrum:goldfire.coffee',
+    'goldfire.coffee',
     'template/collection/collection.coffee.handlebars',
     'template/collection/publish.coffee.handlebars',
     'template/router/router.coffee.handlebars',
@@ -28,5 +28,5 @@ Package.onTest(function(api) {
   api.use('tinytest');
   api.use('coffeescript');
   api.use('spectrum:goldfire');
-  api.addFiles('spectrum:goldfire-tests.coffee');
+  api.addFiles('goldfire-tests.coffee');
 });
