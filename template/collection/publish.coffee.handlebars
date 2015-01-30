@@ -1,0 +1,21 @@
+Meteor.publishComposite "{{lowercase collectionName}}", (doc, sort) ->
+  find: ->
+    {{capital collectionName}}.find doc, sort
+
+  children: [
+    # return all related Users
+    find: (collection) ->
+      Meteor.users.find
+        $or: [
+          {
+            _id: collection.createdUserId
+          }
+          {
+            _id: collection.updatedUserId
+          }
+        ]
+      ,
+        fields:
+          profile: true
+          roles: true
+  ]

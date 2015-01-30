@@ -1,6 +1,8 @@
 @{{capital collectionName}} = new Mongo.Collection("{{lowercase collectionName}}")
 
 {{capital collectionName}}.attachSchema new SimpleSchema
+  name:
+    type: String
 {{#each schema}}
   {{this}}
 {{/each}}

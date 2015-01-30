@@ -17,7 +17,10 @@ Package.onUse(function(api) {
   api.use('aldeed:autoform');
   api.addFiles([
     'spectrum:goldfire.coffee',
-    'template/collection.coffee.handlebars'
+    'template/collection/collection.coffee.handlebars',
+    'template/collection/publish.coffee.handlebars',
+    'template/router/router.coffee.handlebars',
+    'template/router/index.html.handlebars'
   ], 'server');
 });
 

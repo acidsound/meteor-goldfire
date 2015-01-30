@@ -1,0 +1,11 @@
+Router.route "{{collectionName}}/:limit?/:search?/",
+  name: "{{collectionName}}Index"
+
+Router.route "{{collectionName}}/insert/",
+  name: "{{collectionName}}Insert"
+
+Router.route "{{collectionName}}/update/:_id?",
+  name: "{{collectionName}}Update"
+
+Router.route "{{collectionName}}/view/:_id?",
+  name: "{{collectionName}}View"
